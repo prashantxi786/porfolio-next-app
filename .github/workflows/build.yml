@@ -28,10 +28,10 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./out
+          path: ./build
   deploy:
     runs-on: ubuntu-latest
-    needs: out
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
